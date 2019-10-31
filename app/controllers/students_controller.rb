@@ -7,6 +7,15 @@ class StudentsController < ApplicationController
 
   def show
   end
+  
+  def active
+    if @student.active
+      @student.active = false 
+    else 
+       @student.active = true 
+    end 
+    redirect_to show 
+  end
 
   private
 
